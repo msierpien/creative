@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+
+.product-item .product-image {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+@layer components {
+  .animated-button {
+      @apply relative inline-block px-4 py-2 overflow-hidden rounded text-white transition-colors duration-300 ease-out;
+  }
+
+  .animated-button::before {
+      content: '';
+      @apply absolute inset-0 bg-current opacity-0 transition-all duration-300 ease-out;
+      transform: translateY(100%);
+  }
+
+  .animated-button:hover::before {
+      @apply opacity-10;
+      transform: translateY(0);
+  }
+
+  .animated-button span {
+      @apply relative z-10;
+  }
+}
+
+
+.btn {
+ 
+  color: #222;
+  display: inline-block;
+  border: none;
+  outline: none;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border: 2px solid black;
+}
+
+
+
+.btn.btn-secondary:hover::before{
+  @apply bg-grey-50/20;
+}
+
+.btn.btn-background-slide::before {
+    
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+
+
+  transition: transform 200ms ease-in-out;
+  transform: translateY(100%);
+  transform-origin: left;
+}
+
+.btn.btn-background-slide:hover::before,
+.btn.btn-background-slide:focus::before {
+  transform: translateY(0)
+}
+
+.btn.btn-background-slide {
+  transition: color 200ms ease-in-out;
+  z-index: 1;
+}
+
+
+// // 
+// /* Dla WebKit (Chrome, Safari, iOS, Edge) */
+// ul.scroller::-webkit-scrollbar {
+//   height: 12px; /* Wysokość paska przewijania */
+//   background-color: white; /* Tło paska przewijania */
+// }
+
+// ul.scroller::-webkit-scrollbar-thumb {
+//   background-color: black; /* Kolor uchwytu do przesuwania */
+//   border-radius: 6px; /* Zaokrąglenie uchwytu */
+// }
+
+// /* Opcjonalnie dodaj obramowanie uchwytu */
+// ul.scroller::-webkit-scrollbar-thumb {
+//   border: 2px solid white; /* Obramowanie uchwytu (może działać jak padding) */
+// }
+
+// /* Dla Firefox */
+// ul.scroller {
+
+//   scrollbar-color: black white; /* Kolor uchwytu (czarny) i tła (biały) */
+//   scrollbar-width: thin; /* Szerokość paska przewijania (thin, auto, none) */
+// }
+
+// .scroller {
+//   scrollbar-width: none; /* Ukrywanie paska przewijania w Firefox */
+// }
+
+// .scroller::-webkit-scrollbar {
+//   display: none; /* Ukrywanie paska przewijania w Chrome/Safari */
+// }
+
+// .progress-container {
+//   position: relative;
+//   background-color: #fff;
+// }
+
+// .progress-bar {
+//   background-color: black;
+//   height: 100%;
+//   width: 0;
+// }
+
+.scroller {
+  scrollbar-width: none;
+}
+
+.scroller::-webkit-scrollbar {
+  display: none;
+}
+
+.slider-container {
+  position: relative;
+  height: 5px;
+}
+
+.slider-track {
+ 
+  width: 100%;
+  height: 5px;
+  background-color: #fff;
+  position: absolute;
+  // top: 50%;
+  transform: translateY(-50%);
+}
+
+.slider-thumb {
+  width: 60px;
+  height: 5px;
+  background-color: black;
+  position: absolute;
+  top: 50%;
+  // transform: translate(-50%, -50%);
+  cursor: pointer;
+}

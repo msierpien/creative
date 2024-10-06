@@ -1,0 +1,291 @@
+{
+  "__generated__": "⚠️ This file is generated. Do not edit.",
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 2,
+  "settings": {
+    "background": {
+      "backgroundImage": true
+    },
+    "color": {
+      "custom": false,
+      "customDuotone": false,
+      "customGradient": false,
+      "defaultDuotone": false,
+      "defaultGradients": false,
+      "defaultPalette": false,
+      "duotone": [],
+      "palette": [
+        {
+          "color": "rgb(255, 255, 255)",
+          "name": "White",
+          "slug": "white"
+        },
+        {
+          "color": "rgb(0, 0, 0)",
+          "name": "Black",
+          "slug": "black"
+        },
+        {
+          "color": "currentcolor",
+          "name": "Current",
+          "slug": "current"
+        },
+        {
+          "color": "rgb(238, 238, 238)",
+          "name": "Grey 5",
+          "slug": "grey-5"
+        },
+        {
+          "color": "rgb(222, 222, 222)",
+          "name": "Grey 10",
+          "slug": "grey-10"
+        },
+        {
+          "color": "rgb(190, 190, 190)",
+          "name": "Grey 20",
+          "slug": "grey-20"
+        },
+        {
+          "color": "rgb(158, 158, 158)",
+          "name": "Grey 30",
+          "slug": "grey-30"
+        },
+        {
+          "color": "rgb(128, 128, 128)",
+          "name": "Grey 40",
+          "slug": "grey-40"
+        },
+        {
+          "color": "rgb(99, 99, 99)",
+          "name": "Grey 50",
+          "slug": "grey-50"
+        },
+        {
+          "color": "rgb(72, 72, 72)",
+          "name": "Grey 60",
+          "slug": "grey-60"
+        },
+        {
+          "color": "rgb(46, 46, 46)",
+          "name": "Grey 70",
+          "slug": "grey-70"
+        },
+        {
+          "color": "rgb(22, 22, 22)",
+          "name": "Grey 80",
+          "slug": "grey-80"
+        },
+        {
+          "color": "rgb(3, 3, 3)",
+          "name": "Grey 90",
+          "slug": "grey-90"
+        },
+        {
+          "color": "rgb(183, 3, 3)",
+          "name": "Red",
+          "slug": "red"
+        },
+        {
+          "color": "rgb(208, 227, 178)",
+          "name": "Green",
+          "slug": "green"
+        },
+        {
+          "color": "rgb(243, 255, 52)",
+          "name": "Yellow",
+          "slug": "yellow"
+        },
+        {
+          "color": "#f5faf3",
+          "name": "Primary 50",
+          "slug": "primary-50"
+        },
+        {
+          "color": "#e7f5e3",
+          "name": "Primary 100",
+          "slug": "primary-100"
+        },
+        {
+          "color": "#ceebc7",
+          "name": "Primary 200",
+          "slug": "primary-200"
+        },
+        {
+          "color": "#9fd692",
+          "name": "Primary 300",
+          "slug": "primary-300"
+        },
+        {
+          "color": "#79c068",
+          "name": "Primary 400",
+          "slug": "primary-400"
+        },
+        {
+          "color": "#55a443",
+          "name": "Primary 500",
+          "slug": "primary-500"
+        },
+        {
+          "color": "#428633",
+          "name": "Primary 600",
+          "slug": "primary-600"
+        },
+        {
+          "color": "var(--wp--preset--color--yellow)",
+          "name": "Secondary Background",
+          "slug": "secondary-background"
+        },
+        {
+          "color": "var(--wp--preset--color--black)",
+          "name": "Secondary Text-color",
+          "slug": "secondary-text-color"
+        },
+        {
+          "color": "var(--wp--preset--color--green)",
+          "name": "Success Default",
+          "slug": "success-default"
+        },
+        {
+          "color": "var(--wp--preset--color--grey-10)",
+          "name": "Success Background",
+          "slug": "success-background"
+        },
+        {
+          "color": "var(--wp--preset--color--red)",
+          "name": "Error Default",
+          "slug": "error-default"
+        },
+        {
+          "color": "var(--wp--preset--color--grey-5)",
+          "name": "Error Background",
+          "slug": "error-background"
+        },
+        {
+          "color": "var(--wp--preset--color--red)",
+          "name": "Badge Sale",
+          "slug": "badge-sale"
+        },
+        {
+          "color": "var(--wp--preset--color--red)",
+          "name": "Badge Soldout",
+          "slug": "badge-soldout"
+        }
+      ]
+    },
+    "custom": {
+      "spacing": {},
+      "typography": {
+        "font-size": {},
+        "line-height": {}
+      }
+    },
+    "spacing": {
+      "padding": true,
+      "units": [
+        "px",
+        "%",
+        "em",
+        "rem",
+        "vw",
+        "vh"
+      ]
+    },
+    "typography": {
+      "customFontSize": false,
+      "fontFamilies": [
+        {
+          "fontFamily": "ui-sans-serif,system-ui,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"",
+          "name": "Ui-sans-serif",
+          "slug": "sans"
+        },
+        {
+          "fontFamily": "ui-serif,Georgia,Cambria,\"Times New Roman\",Times,serif",
+          "name": "Ui-serif",
+          "slug": "serif"
+        },
+        {
+          "fontFamily": "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace",
+          "name": "Ui-monospace",
+          "slug": "mono"
+        },
+        {
+          "fontFamily": "Montserrat,sans-serif",
+          "name": "Montserrat",
+          "slug": "montserrat"
+        },
+        {
+          "fontFamily": "\"Cormorant Garamond\",serif",
+          "name": "\"Cormorant Garamond\"",
+          "slug": "cormorant"
+        }
+      ],
+      "fontSizes": [
+        {
+          "name": "xs",
+          "size": "0.75rem",
+          "slug": "xs"
+        },
+        {
+          "name": "sm",
+          "size": "0.875rem",
+          "slug": "sm"
+        },
+        {
+          "name": "base",
+          "size": "1rem",
+          "slug": "base"
+        },
+        {
+          "name": "lg",
+          "size": "1.125rem",
+          "slug": "lg"
+        },
+        {
+          "name": "xl",
+          "size": "1.25rem",
+          "slug": "xl"
+        },
+        {
+          "name": "2xl",
+          "size": "1.5rem",
+          "slug": "2xl"
+        },
+        {
+          "name": "3xl",
+          "size": "1.875rem",
+          "slug": "3xl"
+        },
+        {
+          "name": "4xl",
+          "size": "2.25rem",
+          "slug": "4xl"
+        },
+        {
+          "name": "5xl",
+          "size": "3rem",
+          "slug": "5xl"
+        },
+        {
+          "name": "6xl",
+          "size": "3.75rem",
+          "slug": "6xl"
+        },
+        {
+          "name": "7xl",
+          "size": "4.5rem",
+          "slug": "7xl"
+        },
+        {
+          "name": "8xl",
+          "size": "6rem",
+          "slug": "8xl"
+        },
+        {
+          "name": "9xl",
+          "size": "8rem",
+          "slug": "9xl"
+        }
+      ]
+    }
+  }
+}
