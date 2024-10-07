@@ -16,3 +16,7 @@ add_filter('excerpt_more', function () {
 });
 
 
+add_filter('sage-woocommerce/templates', function ($paths) {
+    $paths[] = WP_PLUGIN_DIR . '/woocommerce-subscriptions/templates/';
+    return $paths;
+});

@@ -46,6 +46,7 @@ add_action('after_setup_theme', function () {
      */
     register_nav_menus([
         'primary_navigation' => __('Primary Navigation', 'sage'),
+        'user_navigation' => __('User Navigation', 'sage'),
     ]);
 
     /**
@@ -186,3 +187,44 @@ function custom_woocommerce_image_dimensions() {
     update_option('woocommerce_thumbnail_cropping_custom_width', 2);
     update_option('woocommerce_thumbnail_cropping_custom_height', 3);
 }
+
+// Dodaj obsługę loga
+function sage_setup() {
+    add_theme_support('custom-logo', array(
+        'height'      => 100, // wysokość loga
+        'width'       => 400, // szerokość loga
+        'flex-height' => true,
+        'flex-width'  => true,
+    ));
+}
+add_action('after_setup_theme', 'App\\sage_setup');
+
+
+// Dodaj obsługę galerii produktów WooCommerce
+add_theme_support('wc-product-gallery-zoom');
+add_theme_support('wc-product-gallery-lightbox');
+add_theme_support('wc-product-gallery-slider');
+
+function custom_shop_sidebar() {
+    register_sidebar( array(
+        'name'          => __( 'Shop Sidebar', 'your-theme-textdomain' ),
+        'id'            => 'woocommerce_sidebar',
+        'description'   => __( 'Widgets in this area will be shown on shop pages.', 'your-theme-textdomain' ),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h4 class="widget-title">',
+        'after_title'   => '</h4>',
+    ) );
+}
+add_action( 'widgets_init', 'App\\custom_shop_sidebar' );
+
+
+// Wyłącz style WooCommerce na stronie sklepu
+add_action('wp_enqueue_scripts', function () {
+    if (is_shop() || is_product_category() || is_product()) {
+        wp_dequeue_style('woocommerce-layout');
+        wp_dequeue_style('woocommerce-general');
+        wp_dequeue_style('woocommerce-smallscreen');
+    }
+}, 100);
+

@@ -19,10 +19,10 @@
       </a>
 
       @include('sections.header')
-
+      @hasSection('sidebar')
       <div class="flex-grow">
         <div class="mx-auto">
-          <div class="flex flex-col md:flex-row ">
+          <div class="flex flex-col md:flex-row container mx-auto">
             @hasSection('sidebar')
               <aside class="sidebar w-full md:w-1/4 pr-4 bg-green-200">
                 @yield('sidebar')
@@ -35,6 +35,20 @@
           </div>
         </div>
       </div>
+      @else
+      <div class="flex-grow">
+        <div class="mx-auto">
+          <div class="flex flex-col md:flex-row ">
+     
+
+            <main id="main" class="main w-full   @hasSection('sidebar') md:w-3/4 @endif">
+              @yield('content')
+            </main>
+          </div>
+        </div>
+      </div>
+      @endif
+
 
       @include('sections.footer')
     </div>

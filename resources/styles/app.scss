@@ -81,49 +81,6 @@ body {
 }
 
 
-// // 
-// /* Dla WebKit (Chrome, Safari, iOS, Edge) */
-// ul.scroller::-webkit-scrollbar {
-//   height: 12px; /* Wysokość paska przewijania */
-//   background-color: white; /* Tło paska przewijania */
-// }
-
-// ul.scroller::-webkit-scrollbar-thumb {
-//   background-color: black; /* Kolor uchwytu do przesuwania */
-//   border-radius: 6px; /* Zaokrąglenie uchwytu */
-// }
-
-// /* Opcjonalnie dodaj obramowanie uchwytu */
-// ul.scroller::-webkit-scrollbar-thumb {
-//   border: 2px solid white; /* Obramowanie uchwytu (może działać jak padding) */
-// }
-
-// /* Dla Firefox */
-// ul.scroller {
-
-//   scrollbar-color: black white; /* Kolor uchwytu (czarny) i tła (biały) */
-//   scrollbar-width: thin; /* Szerokość paska przewijania (thin, auto, none) */
-// }
-
-// .scroller {
-//   scrollbar-width: none; /* Ukrywanie paska przewijania w Firefox */
-// }
-
-// .scroller::-webkit-scrollbar {
-//   display: none; /* Ukrywanie paska przewijania w Chrome/Safari */
-// }
-
-// .progress-container {
-//   position: relative;
-//   background-color: #fff;
-// }
-
-// .progress-bar {
-//   background-color: black;
-//   height: 100%;
-//   width: 0;
-// }
-
 .scroller {
   scrollbar-width: none;
 }
@@ -156,3 +113,12 @@ body {
   // transform: translate(-50%, -50%);
   cursor: pointer;
 }
+
+
+
+.custom-logo-link > .custom-logo {
+  height: 50px; /* Zmień na pożądaną wysokość */
+  overflow: hidden; /* Aby ukryć nadmiarowe części, jeśli jest to konieczne */
+  width: 100%; /* Aby zachować proporcje obrazka */
+}
+
