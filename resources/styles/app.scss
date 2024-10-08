@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 
+@import 'filter';
+@import 'components/page-navigation.scss';
+
+
 body {
   font-family: 'Montserrat', sans-serif;
 }
@@ -52,6 +56,11 @@ body {
 
 .btn.btn-secondary:hover::before{
   @apply bg-grey-50/20;
+}
+
+.btn.btn-black{
+  @apply bg-black text-white;
+  
 }
 
 .btn.btn-background-slide::before {

@@ -218,6 +218,31 @@ function custom_shop_sidebar() {
 }
 add_action( 'widgets_init', 'App\\custom_shop_sidebar' );
 
+function footer_service_sidebar() {
+    register_sidebar( array(
+        'name'          => __( 'Footer Sidebar Service', 'your-theme-textdomain' ),
+        'id'            => 'footer_service_sidebar',
+        'description'   => __( 'Widgets in this area will be shown in the footer.', '' ),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h4 class="widget-title">',
+        'after_title'   => '</h4>',
+    ) );
+    register_sidebar( array(
+        'name'          => __( 'Footer Sidebar Menu', 'your-theme-textdomain' ),
+        'id'            => 'footer_menu_sidebar',
+        'description'   => __( 'Widgets in this area will be shown in the footer.', '' ),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h4 class="widget-title">',
+        'after_title'   => '</h4>',
+    ) );
+    
+}
+
+
+add_action( 'widgets_init', 'App\\footer_service_sidebar' );
+
 
 // Wyłącz style WooCommerce na stronie sklepu
 add_action('wp_enqueue_scripts', function () {
@@ -227,4 +252,6 @@ add_action('wp_enqueue_scripts', function () {
         wp_dequeue_style('woocommerce-smallscreen');
     }
 }, 100);
+
+
 

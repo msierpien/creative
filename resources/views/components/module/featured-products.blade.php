@@ -5,7 +5,7 @@
 @endphp
 
 @if ($featured_products->have_posts())
-    <section class="container md:mx-auto py-10 md:pt-24 md:pb-8">
+    <section class="mx-auto max-w-7xl sm:px-6 lg:px-8">
         @include('components.section-header', [
             'title' => $sectionTitle,
             'description' => $sectionDescription,
@@ -31,3 +31,5 @@
 @else
     <p>Brak wyróżnionych produktów do wyświetlenia.</p>
 @endif
+
+

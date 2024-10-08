@@ -12,10 +12,46 @@ domReady(async () => {
  */
 if (import.meta.webpackHot) import.meta.webpackHot.accept(console.error);
 
+// add to cart
 
+// document.addEventListener('DOMContentLoaded', function() {
+//   const addToCartButtons = document.querySelectorAll('.add-to-cart-button');
 
+//   addToCartButtons.forEach(button => {
+//       button.addEventListener('click', function(e) {
+//           e.preventDefault();
+//           const productId = this.getAttribute('data-product-id');
+//           const nonce = this.getAttribute('data-nonce');
 
-//Button add to cart quantity change
+//           fetch(wc_add_to_cart_params.ajax_url, {
+//               method: 'POST',
+//               headers: {
+//                   'Content-Type': 'application/x-www-form-urlencoded',
+//               },
+//               body: new URLSearchParams({
+//                   action: 'add_to_cart',
+//                   product_id: productId,
+//                   quantity: 1,
+//                   nonce: nonce
+//               })
+//           })
+//           .then(response => response.json())
+//           .then(data => {
+//               if (data.success) {
+//                   alert('Produkt dodany do koszyka!');
+//                   // Tutaj możesz dodać kod do aktualizacji widoku koszyka, jeśli jest taka potrzeba
+//               } else {
+//                   alert('Wystąpił błąd podczas dodawania do koszyka.');
+//               }
+//           })
+//           .catch(error => {
+//               console.error('Błąd:', error);
+//               alert('Wystąpił błąd podczas dodawania do koszyka.');
+//           });
+//       });
+//   });
+// });
+
 document.addEventListener('DOMContentLoaded', function () {
   const addToCartButtons = document.querySelectorAll('.add-to-cart-button');
 
@@ -120,7 +156,20 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+//scrollbar
 
+// document.addEventListener("DOMContentLoaded", function () {
+//     const scroller = document.querySelector('.scroller');
+//     const progressBar = document.querySelector('.progress-bar');
+
+//     scroller.addEventListener('scroll', function () {
+//         const scrollWidth = scroller.scrollWidth - scroller.clientWidth;
+//         const scrollLeft = scroller.scrollLeft;
+//         const scrollPercentage = (scrollLeft / scrollWidth) * 100;
+
+//         progressBar.style.width = `${scrollPercentage}%`;
+//     });
+// });
 
 document.addEventListener('DOMContentLoaded', function () {
   const scroller = document.querySelector('.scroller');
@@ -182,104 +231,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
     sliderThumb.style.left = `${scrollPercentage}%`;
   });
+  // Aktualizacja szerokości paska na podstawie przewijania
+  scroller.addEventListener('scroll', function () {
+    const scrollWidth = scroller.scrollWidth - scroller.clientWidth;
+    const scrollLeft = scroller.scrollLeft;
+    const scrollPercentage = (scrollLeft / scrollWidth) * 100;
 
+    // Zmieniamy szerokość paska (sliderThumb) w zależności od przewinięcia
+    sliderThumb.style.width = `${scrollPercentage}%`;
+  });
   // Sprawdź, czy przewijanie jest potrzebne na starcie
   updateSliderVisibility();
 
   // Opcjonalnie: Sprawdź ponownie po zmianie rozmiaru okna
   window.addEventListener('resize', updateSliderVisibility);
-});
-
-
-//Filter products by attributes
-
-document.addEventListener('DOMContentLoaded', function () {
-  const attributeButtons = document.querySelectorAll('.show-attributes-button');
-  const checkboxes = document.querySelectorAll('.attribute-options input[type="checkbox"]');
-  let currentlyOpenGroup = null;
-  let updateTimer = null;
-
-  // Funkcja do otwierania/zamykania grup atrybutów
-  function toggleAttributeGroup(button) {
-    const attributeGroupId = button.dataset.target.replace('attribute-group-', '');
-    const attributeGroup = document.getElementById(attributeGroupId);
-
-    if (attributeGroup) {
-      if (currentlyOpenGroup && currentlyOpenGroup !== attributeGroup) {
-        currentlyOpenGroup.classList.add('hidden');
-      }
-      attributeGroup.classList.toggle('hidden');
-      currentlyOpenGroup = attributeGroup.classList.contains('hidden') ? null : attributeGroup;
-    }
-  }
-
-  // Funkcja do zbierania zaznaczonych atrybutów
-  function collectCheckedAttributes() {
-    const attributeGroups = {};
-    checkboxes.forEach(checkbox => {
-      const attributeName = checkbox.name.replace('[]', '').replace('pa_', '');
-      const attributeValue = checkbox.value;
-      
-      if (checkbox.checked) {
-        if (!attributeGroups[attributeName]) {
-          attributeGroups[attributeName] = [];
-        }
-        attributeGroups[attributeName].push(attributeValue);
-      }
-    });
-    return attributeGroups;
-  }
-
-  // Funkcja do tworzenia URLSearchParams
-  function createUrlParams(attributeGroups) {
-    const params = new URLSearchParams();
-    for (const [attribute, values] of Object.entries(attributeGroups)) {
-      params.set(`filter_${attribute}`, values.join(','));
-      params.set(`query_type_${attribute}`, 'or');
-    }
-    return params;
-  }
-
-  // Funkcja do aktualizacji URL i przeładowania strony
-  function updateUrlAndReload() {
-    const attributeGroups = collectCheckedAttributes();
-    const params = createUrlParams(attributeGroups);
-    const newUrl = `${window.location.pathname}?${params.toString()}`;
-    window.location.href = newUrl; // To spowoduje przeładowanie strony
-  }
-
-  // Funkcja do ustawiania opóźnionego przeładowania
-  function setDelayedRefresh() {
-    clearTimeout(updateTimer);
-    updateTimer = setTimeout(() => {
-      updateUrlAndReload();
-    }, 1000);
-  }
-
-  // Funkcja do zaznaczania checkboxów na podstawie URL
-  function setCheckboxesFromUrl() {
-    const params = new URLSearchParams(window.location.search);
-    checkboxes.forEach(checkbox => {
-      const attributeName = checkbox.name.replace('[]', '').replace('pa_', '');
-      const filterParam = params.get(`filter_${attributeName}`);
-      if (filterParam) {
-        const values = filterParam.split(',');
-        checkbox.checked = values.includes(checkbox.value);
-      } else {
-        checkbox.checked = false;
-      }
-    });
-  }
-
-  // Dodawanie event listenerów
-  attributeButtons.forEach(button => {
-    button.addEventListener('click', () => toggleAttributeGroup(button));
-  });
-
-  checkboxes.forEach(checkbox => {
-    checkbox.addEventListener('change', setDelayedRefresh);
-  });
-
-  // Inicjalizacja - zaznacz checkboxy na podstawie URL przy ładowaniu strony
-  setCheckboxesFromUrl();
 });

@@ -62,7 +62,9 @@ const config = {
     
     // Odwołania do bazowych kolorów
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms'),
+  ],
 };
 
 export default config;

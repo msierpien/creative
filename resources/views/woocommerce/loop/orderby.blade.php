@@ -1,4 +1,4 @@
-<?php
+{{-- 
 /**
  * Show options for ordering
  *
@@ -13,19 +13,25 @@
  * @see         https://woocommerce.com/document/template-structure/
  * @package     WooCommerce\Templates
  * @version     3.6.0
- */
-
+ */ --}}
+@php
+		defined( 'ABSPATH' ) || exit;
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-?>
-<form class="woocommerce-ordering" method="get">
-	<select name="orderby" class="orderby" aria-label="<?php esc_attr_e( 'Shop order', 'woocommerce' ); ?>">
-		<?php foreach ( $catalog_orderby_options as $id => $name ) : ?>
-			<option value="<?php echo esc_attr( $id ); ?>" <?php selected( $orderby, $id ); ?>><?php echo esc_html( $name ); ?></option>
-		<?php endforeach; ?>
+@endphp
+<form class="woocommerce-ordering p-0 m-0" method="get">
+	<select name="orderby" class="orderby  btn e" aria-label="{{ __('Shop order', 'woocommerce') }}">
+			@foreach ($catalog_orderby_options as $id => $name)
+					<option value="{{ $id }}" {{ $orderby == $id ? 'selected' : '' }}>
+							{{ $name }}
+					</option>
+			@endforeach
 	</select>
+	
 	<input type="hidden" name="paged" value="1" />
-	<?php wc_query_string_form_fields( null, array( 'orderby', 'submit', 'paged', 'product-page' ) ); ?>
+	
+	{{-- Generowanie pól formularza z query stringiem --}}
+	{!! wc_query_string_form_fields(null, ['orderby', 'submit', 'paged', 'product-page']) !!}
 </form>

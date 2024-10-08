@@ -1,10 +1,6 @@
 @php
 
-    /**
-     * Template Name: Home page
-     *
 
-*/
 
     if (!function_exists('WC')) {
         return;
@@ -28,9 +24,62 @@
         </x-alert>
     @endif
     @if (!empty($subcategories) && !is_wp_error($subcategories))
+    <x-subcategories :category-id="16" />
+
+
+     
+        @include('components.module.main', ['main' => 'main'])
+
+
+    @else
+        <p>Brak podkategorii.</p>
+    @endif
+
+
+
+
+@endsection --}}
+
+{{-- 
+  @section('sidebar')
+    @include('sections.sidebar')
+  @endsection 
+  
+
+
+
+   {{-- @php
+
+
+
+    if (!function_exists('WC')) {
+        return;
+    }
+
+    $subcategories = get_terms([
+        'taxonomy' => 'product_cat',
+        'hide_empty' => false,
+        'parent' => 16,
+    ]);
+@endphp
+
+@extends('layouts.app')
+
+@section('content')
+
+    @if (!have_posts())
+        <x-alert type="warning">
+            {!! __('Sorry, no results were found.', 'sage') !!}
+        </x-alert>
+    @endif
+    @if (!empty($subcategories) && !is_wp_error($subcategories))
+
+
+
+    
         <div class="bg-grey-5 ">
-            <div class="container mx-auto">
-                <ul class="flex justify-around flex-wrap">
+            <div class="container mx-auto ">
+                <ul class="flex justify-around scroller ">
                     @foreach ($subcategories as $subcategory)
                         @php
                             $subcategory_link = get_term_link($subcategory, 'product_cat');
@@ -61,19 +110,13 @@
 
         </div>
 
-
-     
         @include('components.module.main', ['main' => 'main'])
-
 
     @else
         <p>Brak podkategorii.</p>
     @endif
 
-
-
-
-@endsection
+@endsection --}}
 
 {{-- 
   @section('sidebar')
