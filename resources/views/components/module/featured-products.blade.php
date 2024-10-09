@@ -24,7 +24,7 @@
         @if ($product_count > 4)
             <footer class="my-2 p-4 md:my-5 md:p-8 flex justify-center">
                 <x-button name="Zobacz wszystkie {{ esc_html($category_name) }}"
-                    link="{{ esc_url($category_link) }}" target="_blank" />
+                    link="{{ esc_url($category_link) }}" target="" />
             </footer>
         @endif
     </section>

@@ -44,7 +44,7 @@ $sorting = ob_get_clean(); // Zapisz wynik do zmiennej
 
 
 @endphp
-<div class="flex flex-wrap gap-5 my-5">
+<div class="flex flex-wrap gap-5 my-5 mx-4 md:mx-0">
   @foreach ($all_attributes as $taxonomy => $attribute_data)
       <div class="product-attribute relative ">
           
