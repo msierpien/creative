@@ -1,12 +1,16 @@
 @php
-$attribute_taxonomies = wc_get_attribute_taxonomies();
-$all_attributes = [];
+// Pobierz bieżące zapytanie WooCommerce
+$query = $GLOBALS['wp_query']->query_vars;
 
-// Pobierz wszystkie produkty na stronie archiwum
+// Pobierz produkty na podstawie bieżącego zapytania
 $products = wc_get_products([
     'status' => 'publish',
-    'limit' => -1, // Wszystkie produkty
+    'limit' => -1,
+    'category' => isset($query['product_cat']) ? $query['product_cat'] : '',
+    'tag' => isset($query['product_tag']) ? $query['product_tag'] : '',
 ]);
+
+$all_attributes = [];
 
 foreach ($products as $product) {
     $attributes = $product->get_attributes();
@@ -15,7 +19,7 @@ foreach ($products as $product) {
         if (!isset($all_attributes[$taxonomy])) {
             $all_attributes[$taxonomy] = [
                 'terms' => [],
-                'label' => '',
+                'label' => wc_attribute_label($taxonomy),
             ];
         }
         
@@ -30,19 +34,9 @@ foreach ($products as $product) {
     }
 }
 
-// Pobierz etykiety dla atrybutów
-foreach ($attribute_taxonomies as $tax) {
-    $taxonomy = 'pa_' . $tax->attribute_name;
-    if (isset($all_attributes[$taxonomy])) {
-        $all_attributes[$taxonomy]['label'] = $tax->attribute_label;
-    }
-}
-
-ob_start(); // Rozpocznij buforowanie wyjścia
-woocommerce_catalog_ordering(); // Wywołaj sortowanie
-$sorting = ob_get_clean(); // Zapisz wynik do zmiennej
-
-
+ob_start();
+woocommerce_catalog_ordering();
+$sorting = ob_get_clean();
 @endphp
 <div class="flex flex-wrap gap-5 my-5 mx-4 md:mx-0">
   @foreach ($all_attributes as $taxonomy => $attribute_data)
