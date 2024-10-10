@@ -38,6 +38,10 @@ function custom_woocommerce_image_dimensions() {
     update_option('woocommerce_thumbnail_cropping_custom_height', 3);
 }
 
+
+// Używamy haka WooCommerce, aby zmiana dotyczyła tylko produktów WooCommerce
+add_action('init', 'App\\custom_woocommerce_image_dimensions', 1);
+
 /**
  * Disable WooCommerce styles on specific pages.
  */

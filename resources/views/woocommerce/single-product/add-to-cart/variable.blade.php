@@ -42,7 +42,7 @@
                         </th>
                         <td class="value">
                             @php
-
+														
                                 wc_dropdown_variation_attribute_options([
                                     'options' => $options,
                                     'attribute' => $attribute_name,
