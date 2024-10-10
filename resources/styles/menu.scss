@@ -1,0 +1,28 @@
+.menu-user-menu-container {
+  height: 100%;
+  width: 100%;
+}
+#menu-user-menu {
+  display: flex;
+
+  align-items: center;
+  padding: 0 20px;
+
+  border-bottom: 1px solid #e9ecef;
+  gap: 20px;
+  height: 100%;
+}
+
+.wkh-icon svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+  overflow: visible;
+  pointer-events: none;
+}
+.wkh-icon svg path {
+  fill: transparent;
+  stroke: black;
+  stroke-width: 1px;
+  vector-effect: non-scaling-stroke;
+}
