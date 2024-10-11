@@ -17,7 +17,7 @@
 @endphp
 
 <div id="product-{{ get_the_ID() }}" @php wc_product_class('p-4 bg-white shadow-md rounded-lg', $product); @endphp>
-    <div class="relative"> 
+    <div class="relative">
 
 
         <div class="flex flex-col lg:flex-row gap-8">
@@ -25,7 +25,6 @@
             <div class="flex-1">
                 @include('components.product.product-gallery')
             </div>
-    
 
 
 
@@ -34,45 +33,50 @@
 
 
 
-						
+
+
             {{-- Product Summary --}}
             <div class="flex-1 summary entry-summary gb-red">
                 <div class="space-y-4">
                     {{-- Title --}}
                     @include('woocommerce.single-product.title')
-                    
+
                     {{-- Rating --}}
                     <div class="flex items-center space-x-2">
                         @include('woocommerce.single-product.rating')
                     </div>
-                    
+
                     {{-- Price --}}
                     <div class="text-2xl font-semibold text-gray-800">
                         @include('woocommerce.single-product.price')
                     </div>
-                    
+
                     {{-- Short Description --}}
                     <div class="text-gray-600">
                         @include('woocommerce.single-product.short-description')
                     </div>
-                    
-                    {{-- Add to Cart Button --}}
-                    <div>
-                        @php do_action('product_summary_add_to_card'); @endphp
-												
-                    </div>
-                    
-                    
-                    testowe dane atrybutów </br>
 
-         
-										
-                    
+                    {{-- Add to Cart Button --}}
+                    {{-- <div>
+                        @php do_action('product_summary_add_to_card'); @endphp
+
+                    </div> --}}
+
+                    <div id="quantity-changer" data-product-id="{{ $product->get_id() }}">asd</div>
+                    @php
+                        // Przekazujemy dane do Reacta przez lokalizację skryptu
+                        wp_localize_script('js/app.js', 'productData', [
+                            'id' => $product->get_id(),
+                            'name' => $product->get_name(),
+                        ]);
+                    @endphp
+      
+
                     {{-- Product Meta --}}
                     <div class="text-sm text-gray-500">
                         @include('woocommerce.single-product.meta')
                     </div>
-                    
+
                     {{-- Sharing Options --}}
                     <div class="flex space-x-4 mt-4">
                         @include('woocommerce.single-product.share')

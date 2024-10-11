@@ -1,5 +1,9 @@
 import domReady from '@roots/sage/client/dom-ready';
 
+import React from 'react';
+import ReactDOM from 'react-dom';
+import QuantityChanger from './components/QuantityChanger';
+
 /**
  * Application entrypoint
  */
@@ -283,3 +287,10 @@ document.addEventListener('DOMContentLoaded', function () {
   // Inicjalizacja - zaznacz checkboxy na podstawie URL przy ładowaniu strony
   setCheckboxesFromUrl();
 });
+
+//terst react 
+
+// Sprawdź, czy istnieje element o ID "quantity-changer"
+if (document.getElementById('quantity-changer')) {
+  ReactDOM.render(<QuantityChanger />, document.getElementById('quantity-changer'));
+}

@@ -57,3 +57,15 @@ add_action('wp_enqueue_scripts', function () {
  * Add action for product summary.
  */
 add_action('product_summary_add_to_card', 'woocommerce_template_single_add_to_cart', 30);
+
+
+// Add Nonce to the script
+function my_enqueue_react_script() {
+    wp_enqueue_script('app-js', get_template_directory_uri() . '/public/js/app.js', [], null, true);
+    
+    // Dodaj nonce do skryptu
+    wp_localize_script('app-js', 'myAppData', [
+        'nonce' => wp_create_nonce('wc_store_api')  // Zmiana na 'wp_rest' zamiast 'wc_store_api'
+    ]);
+}
+add_action('wp_enqueue_scripts', 'App\\my_enqueue_react_script');
