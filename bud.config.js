@@ -18,9 +18,9 @@ export default async (app) => {
    * @see {@link https://bud.js.org/reference/bud.entry}
    * @see {@link https://bud.js.org/reference/bud.assets}
    */
+  
   app
-  app
-    .entry('app', ['@scripts/app', '@styles/app.scss'])
+    .entry('app', ['@scripts/app', '@scripts/main', '@styles/app.scss'])
     .entry('editor', ['@scripts/editor', '@styles/editor.scss'])
     .assets(['images']);
 
@@ -39,8 +39,8 @@ export default async (app) => {
    * @see {@link https://bud.js.org/reference/bud.watch}
    */
   app
-    .setUrl('http://localhost:3000')
-    .setProxyUrl('http://localhost:10014/')
+    .setUrl('http://localhost:3000/')
+    .setProxyUrl('http://localhost:10022/')
     .watch(['resources/views', 'app']);
 
   /**
