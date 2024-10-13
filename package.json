@@ -27,5 +27,8 @@
     "node-sass": "^9.0.0",
     "sass": "^1.79.4",
     "sass-loader": "^16.0.2"
+  },
+  "dependencies": {
+    "@wordpress/data": "^10.9.0"
   }
 }
