@@ -52,7 +52,6 @@ const QuantityChanger = () => {
     });
     }
   };
-  console.log(myAppData.nonce)
   return (
     <div>
       <p>Product ID: {productId}</p>

@@ -1,0 +1,128 @@
+/* Ogólny wrapper na zakładki */
+.woocommerce-tabs {
+  margin-top: 20px;
+  // padding-top: 20px;
+}
+
+/* Styl dla listy zakładek (ul) */
+.woocommerce-tabs .wc-tabs {
+  background-color:  #eaeaea;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  
+  // border-bottom: 2px solid #eaeaea;
+  // margin-bottom: 20px;
+  // padding-bottom: 10px;
+}
+
+/* Styl dla poszczególnych zakładek (li) */
+.woocommerce-tabs .wc-tabs li {
+  list-style: none;
+  background-color: #fff;
+  border: 1px solid #000;
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 10px 15px;
+  // border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+/* Styl dla linków w zakładkach */
+.woocommerce-tabs .wc-tabs li a {
+}
+
+/* Styl dla aktywnej zakładki */
+.woocommerce-tabs .wc-tabs li.active ,
+.woocommerce-tabs .wc-tabs li:hover {
+  padding: 10px 15px;
+  color: #fff;
+  background-color: #000;
+}
+
+/* Styl dla treści zakładek */
+.woocommerce-Tabs-panel {
+  display: none;
+  padding: 20px;
+  // background-color: #f9f9f9;
+  border: 1px solid #eaeaea;
+}
+
+/* Pokazywanie aktywnej treści zakładki */
+.woocommerce-Tabs-panel.active {
+  display: block;
+}
+
+/* Styl dla tabeli z informacjami dodatkowymi */
+.woocommerce-product-attributes {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.woocommerce-product-attributes th,
+.woocommerce-product-attributes td {
+  padding: 10px;
+  border-bottom: 1px solid #eaeaea;
+  text-align: left;
+}
+
+.woocommerce-product-attributes th {
+  background-color: #f0f0f01a;
+  font-weight: bold;
+}
+
+/* Styl dla opinii */
+.woocommerce-Reviews-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.woocommerce-noreviews {
+  font-size: 16px;
+  color: #999;
+}
+
+/* Formularz opinii */
+#review_form label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+#review_form .stars a {
+  color: #ffcc00;
+  font-size: 18px;
+  margin-right: 5px;
+  text-decoration: none;
+}
+
+#review_form .stars a:hover {
+  color: #ff9900;
+}
+
+#review_form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #eaeaea;
+  border-radius: 4px;
+  resize: vertical;
+  margin-bottom: 20px;
+}
+
+#review_form .form-submit input {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  // border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#review_form .form-submit input:hover {
+  background-color: #333;
+}

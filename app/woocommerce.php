@@ -69,3 +69,46 @@ function my_enqueue_react_script() {
     ]);
 }
 add_action('wp_enqueue_scripts', 'App\\my_enqueue_react_script');
+
+function my_product_data_to_react() {
+    global $product;
+
+    // Sprawdź, czy $product jest prawidłowym obiektem WC_Product
+    if ( ! is_a( $product, 'WC_Product' ) ) {
+        return;  // Przerwij, jeśli $product nie jest obiektem WooCommerce
+    }
+
+    // Sprawdź, czy produkt istnieje i jest typu variable
+    if ($product && $product->get_type() === 'variable') {
+        $product_variations = $product->get_available_variations();
+        $attribute_data = [];
+
+        // Pobierz listę atrybutów
+        foreach ($product->get_attributes() as $taxonomy => $attribute) {
+            $attribute_label = wc_attribute_label($taxonomy);  // Pobierz przyjazną nazwę atrybutu
+            $attribute_data[$taxonomy] = [
+                'name' => $attribute_label,  // Nazwa atrybutu np. "Kolor"
+                'terms' => wc_get_product_terms($product->get_id(), $taxonomy, ['fields' => 'all'])  // Pobierz wszystkie wartości atrybutów
+            ];
+        }
+    } else {
+        $product_variations = [];
+        $attribute_data = [];
+    }
+    $currency_symbol = get_woocommerce_currency_symbol(); // Pobierz symbol waluty
+
+
+
+    $product_data = [
+        'productId' => $product->get_id(),
+        'productType' => $product->get_type(),
+        'productVariations' => $product_variations,
+        'productAttributes' => $attribute_data,  // Dodajemy dane atrybutów
+        'productPrice' => $product->get_price(),
+        'productTitle' => $product->get_title(),
+        'currencySymbol' => $currency_symbol // Dodaj symbol waluty
+    ];
+
+    wp_localize_script('app-js', 'productData', $product_data);
+}
+add_action('wp_enqueue_scripts', 'App\\my_product_data_to_react');

@@ -1,6 +1,7 @@
-@php
-
-
+{{-- 
+  Template Name: HomePage
+  Template Post Type: page
+--}}@php
 
     if (!function_exists('WC')) {
         return;

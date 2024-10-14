@@ -8,7 +8,7 @@ if (!defined('ABSPATH')) {
 
 @section('content')
     @php
-        do_action('woocommerce_before_main_content');
+        // do_action('woocommerce_before_main_content');
     @endphp
 
     @while(have_posts())
@@ -22,7 +22,7 @@ if (!defined('ABSPATH')) {
         do_action('woocommerce_after_main_content');
     @endphp
 
-    @php
+    {{-- @php
         do_action('woocommerce_sidebar');
-    @endphp
+    @endphp --}}
 @endsection

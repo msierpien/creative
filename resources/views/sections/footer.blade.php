@@ -22,9 +22,9 @@
             <form method="post" action="#" id="footer_signup"
                 accept-charset="UTF-8" class="pb-4">
                 <div class="flex gap-4 flex-wrap">
-                    <div class="input">
-                        <input type="email" id="k_id_email" name="email" class="relative border-2 border-black" required="">
-                        <label for="k_id_email" class="absolute top-0 z-20">Your e-mail</label>
+                    <div class="input relative">
+                        <input type="email" id="k_id_email" name="email" class="relative border-2 border-black" placeholder="twój email" required="">
+                        <label for="k_id_email" class="hidden top-0 z-20">Your e-mail</label>
                     </div>
 
                     <div class=" ">

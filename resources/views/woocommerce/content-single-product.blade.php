@@ -16,7 +16,7 @@
     }
 @endphp
 
-<div id="product-{{ get_the_ID() }}" @php wc_product_class('p-4 bg-white shadow-md rounded-lg', $product); @endphp>
+<div id="product-{{ get_the_ID() }}" @php wc_product_class('mx-auto max-w-7xl sm:px-6 lg:px-8 mt-0 md:mt-8', $product); @endphp>
     <div class="relative">
 
 
@@ -27,17 +27,9 @@
             </div>
 
 
-
-
-
-
-
-
-
-
             {{-- Product Summary --}}
-            <div class="flex-1 summary entry-summary gb-red">
-                <div class="space-y-4">
+            <div class="flex-1 summary entry-summary">
+                <div class="space-y-2">
                     {{-- Title --}}
                     @include('woocommerce.single-product.title')
 
@@ -46,30 +38,24 @@
                         @include('woocommerce.single-product.rating')
                     </div>
 
-                    {{-- Price --}}
-                    <div class="text-2xl font-semibold text-gray-800">
-                        @include('woocommerce.single-product.price')
-                    </div>
-
+                    
                     {{-- Short Description --}}
                     <div class="text-gray-600">
                         @include('woocommerce.single-product.short-description')
                     </div>
-
+                    
                     {{-- Add to Cart Button --}}
                     {{-- <div>
                         @php do_action('product_summary_add_to_card'); @endphp
-
+                        
                     </div> --}}
-
-                    <div id="quantity-changer" data-product-id="{{ $product->get_id() }}">asd</div>
-                    @php
-                        // Przekazujemy dane do Reacta przez lokalizację skryptu
-                        wp_localize_script('js/app.js', 'productData', [
-                            'id' => $product->get_id(),
-                            'name' => $product->get_name(),
-                        ]);
-                    @endphp
+                    
+                    <div id="quantity-changer" >asd</div>
+                    
+                    {{-- Price --}}
+                    {{-- <div class="text-2xl font-semibold text-gray-800">
+                        @include('woocommerce.single-product.price')
+                    </div> --}}
       
 
                     {{-- Product Meta --}}
