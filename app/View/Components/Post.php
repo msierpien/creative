@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Composers;
+namespace App\View\Components;
 
 use Roots\Acorn\View\Composer;
 

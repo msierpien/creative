@@ -3,7 +3,7 @@
         <div class="container mx-auto flex justify-between p-2">
 
             <a class="brand" href="{{ home_url('/') }}">
-                {!! $siteName !!}
+                {{-- {!! $siteName !!} --}}asd
             </a>
     
       

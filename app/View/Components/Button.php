@@ -2,11 +2,10 @@
 
 namespace App\View\Components;
 
-use Roots\Acorn\View\Component;
-
-
+use Illuminate\View\Component;
 
 class Button extends Component
+
 {
     public $name;
     public $link;
