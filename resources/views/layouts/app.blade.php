@@ -21,8 +21,8 @@
         </a>
         @include('sections.header')
         <div class="custom-filter-container">
-        
-      </div>
+            
+   
        
      
         @hasSection('sidebar')
