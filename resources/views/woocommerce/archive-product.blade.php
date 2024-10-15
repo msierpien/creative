@@ -16,7 +16,7 @@
         }
 
     @endphp
- <x-subcategories :category-id="$current_category_id" />
+ <x-subcategories category-id={{$current_category_id}} />
 
     <div class="container mx-auto">
         <header class="woocommerce-products-header">

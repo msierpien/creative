@@ -1,3 +1,8 @@
+{{-- @php
+echo '<pre>';
+print_r($subcategories);
+echo '</pre>';
+@endphp --}}
 @if (!empty($subcategories) && !is_wp_error($subcategories))
     <div class="bg-grey-10  px-4 md:px-0 ">
         <div class="container mx-auto p-5">

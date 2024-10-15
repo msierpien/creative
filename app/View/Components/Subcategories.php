@@ -1,10 +1,12 @@
 <?php
 
-namespace App\View\Composers;
+namespace App\View\Components;
+use Illuminate\View\Component;
 
-use Roots\Acorn\View\Composer;
 
-class Subcategories extends Composer
+
+
+class Subcategories extends Component
 {
     public $categoryId;
     public $subcategories;
