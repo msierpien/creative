@@ -1,4 +1,8 @@
-
-    <a href="{{ $link }}" target="{{ $target }}" class="btn btn-background-slide p-3.5 btn-secondary" >
-      {{ $name }}
-    </a>
+<button 
+    type="{{ $type }}" 
+    name="{{ $name }}" 
+    value="{{ $value }}"
+    class="px-4 py-2  {{ $styleClasses }}"
+>
+    {{ $title }}
+</button>

@@ -1,28 +1,33 @@
 <?php
 
 namespace App\View\Components;
+
 use Illuminate\View\Component;
 
 class Button extends Component
-
 {
     public $name;
-    public $link;
-    public $target;
+    public $title;
+    public $value;
+    public $type;
+    public $styleClasses;
 
-    /**
-     * Create the component instance.
-     *
-     * @param string $name
-     * @param string $link
-     * @param string $target
-     */
-    public function __construct($name = 'Button', $link = '#', $target = '_self')
+    public function __construct($name = 'Button', $title = 'Button', $value = 'Button', $type = 'button', $style = 'black')
     {
         $this->name = $name;
-        $this->link = $link;
-        $this->target = $target;
+        $this->title = $title;
+        $this->value = $value;
+        $this->type = $type;
 
+        // Definicja stylów na podstawie wartości przekazanej do parametru $style
+        $styles = [
+            'black' => 'bg-black text-white hover:bg-gray-80',
+            'white' => 'bg-white text-black border border-black hover:bg-gray-10',
+            'red' => 'bg-red text-white hover:bg-red/50',
+        ];
+
+        // Przypisanie klas Tailwind CSS na podstawie wybranego stylu
+        $this->styleClasses = $styles[$style] ?? $styles['black'];  // domyślnie black
     }
 
     /**
@@ -32,6 +37,6 @@ class Button extends Component
      */
     public function render()
     {
-        return $this->view('components.atoms.button');
+        return view('components.atoms.button');
     }
 }
