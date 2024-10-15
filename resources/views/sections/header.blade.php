@@ -1,9 +1,9 @@
-<header class="banner" id="main-menu" >
+<header class="banner" >
     <div class="bg-white ">
         <div class="container mx-auto flex justify-between p-2">
 
             <a class="brand" href="{{ home_url('/') }}">
-                {{-- {!! $siteName !!} --}}asd
+                {!! $siteName !!}
             </a>
     
       
@@ -13,7 +13,7 @@
           @endif
             </div>
             <div>
-              faq
+              {{-- faq --}}
             </div>
         </div>
 
