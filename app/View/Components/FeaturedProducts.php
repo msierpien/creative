@@ -1,10 +1,11 @@
 <?php
 
-namespace App\View\Composers;
+namespace App\View\Components;
 use Illuminate\View\Component;
 use WP_Query;
 
 class FeaturedProducts extends Component
+
 {
     public $categoryId;
     public $productPerPage;

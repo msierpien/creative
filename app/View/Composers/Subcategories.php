@@ -2,9 +2,9 @@
 
 namespace App\View\Composers;
 
-use Illuminate\View\Component;
+use Roots\Acorn\View\Composer;
 
-class Subcategories extends Component
+class Subcategories extends Composer
 {
     public $categoryId;
     public $subcategories;
