@@ -17,27 +17,15 @@
 @extends('layouts.app')
 
 @section('content')
-
-
     @if (!have_posts())
         <x-alert type="warning">
             {!! __('Sorry, no results were found.', 'sage') !!}
         </x-alert>
     @endif
     @if (!empty($subcategories) && !is_wp_error($subcategories))
-    <x-subcategories :category-id="16" />
-
-
-     
+        <x-subcategories category-id="16" />
         @include('components.module.main', ['main' => 'main'])
-
-
     @else
         <p>Brak podkategorii.</p>
     @endif
-
-
-
-
-@endsection 
-
+@endsection
