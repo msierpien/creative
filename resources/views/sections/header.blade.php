@@ -1,4 +1,4 @@
-<header class="banner">
+<header class="banner" id="main-menu" >
     <div class="bg-white ">
         <div class="container mx-auto flex justify-between p-2">
 
@@ -18,9 +18,9 @@
         </div>
 
     </div>
-    <div class="bg-grey-5">
+    <div id="main-menu"  class="bg-grey-5">
         @if (has_nav_menu('primary_navigation'))
-            <div class="flex justify-between container mx-auto">
+            <div id="main-menu"   class="flex justify-between container mx-auto">
 
                 <nav class="nav-primary" aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}">
                     {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav', 'echo' => false]) !!}
@@ -32,5 +32,17 @@
             </div>
         @endif
     </div>
-   
+
 </header>
+<script>
+    window.addEventListener('scroll', function() {
+        var menu = document.getElementById('main-menu');
+        var scrollPosition = window.pageYOffset;
+
+        if (scrollPosition > 66) { // Gdy przewinięcie przekroczy 66px
+            menu.classList.add('fixed', 'top-0', 'left-0', 'right-0', 'z-50');
+        } else {
+            menu.classList.remove('fixed', 'top-0', 'left-0', 'right-0', 'z-50');
+        }
+    });
+</script>
