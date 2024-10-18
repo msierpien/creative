@@ -2,10 +2,10 @@
     <div class="bg-white ">
         <div class="container mx-auto flex justify-between p-2">
 
-            <a class="brand" href="{{ home_url('/') }}">
+            {{-- <a class="brand" href="{{ home_url('/') }}">
                 {!! $siteName !!}
             </a>
-    
+     --}}
       
             <div class=" ">
               @if (function_exists('the_custom_logo'))
