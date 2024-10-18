@@ -6,9 +6,12 @@
     <div class="flex flex-col-reverse md:flex-row  justify-between">
         <!-- Sidebar sekcja -->
         <div class="flex flex-1 flex-col sm:flex-row text-white bg-black px-20 sm:px-0">
-            <div class="w-full min-w-64 pt-10 sm:pl-10">
+            <div class="w-full min-w-64 pt-10 sm:pl-10 space-y-4">
                 <h2 class="font-cormorant font-semibold text-3xl mb-4">O nas</h2>
                 @php(dynamic_sidebar('footer_service_sidebar'))
+                <div class="flex items-center footer-social">
+                    @php(dynamic_sidebar('topmenu_social'))
+            </div>
             </div>
             <div class="w-full min-w-64 pt-10 p-4 text-right sm:text-left">
                 <h2 class="font-cormorant font-semibold text-3xl mb-4">Popularne kategorie</h2>

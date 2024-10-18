@@ -40,7 +40,7 @@ export default async (app) => {
    */
   app
     .setUrl('http://localhost:3000/')
-    .setProxyUrl('http://localhost:10022/')
+    .setProxyUrl('http://localhost:10023/')
     .watch(['resources/views', 'app']);
 
   /**

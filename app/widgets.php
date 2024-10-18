@@ -55,4 +55,9 @@ add_action('widgets_init', function () {
         'before_title'  => '<h4 class="widget-title">',
         'after_title'   => '</h4>',
     ]);
+
+    register_sidebar([
+        'name' => __('Topmenu social', 'your-theme-textdomain'),
+        'id'   => 'topmenu_social',
+    ] + $config);
 });

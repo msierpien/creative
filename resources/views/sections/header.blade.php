@@ -12,8 +12,8 @@
               {!! the_custom_logo() !!}
           @endif
             </div>
-            <div>
-              {{-- faq --}}
+            <div class="flex justify-center items-center topmenu-social">
+                    @php(dynamic_sidebar('topmenu_social'))
             </div>
         </div>
 

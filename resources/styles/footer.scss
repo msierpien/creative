@@ -1,0 +1,20 @@
+.footer-social, .topmenu-social {
+  li{
+    @apply bg-grey-60
+  }
+  a, svg {
+    height: 1.2em;
+    width: 1.2em;
+  }
+ .wp-social-link-pinterest :hover{
+    @apply bg-[#C8232C] rounded-full; 
+
+    // border-radius: 50px;
+ }
+ .wp-social-link-facebook :hover{
+    @apply bg-[#1877F2] rounded-full; 
+
+    // border-radius: 50px;
+ }
+
+}
