@@ -1,59 +1,48 @@
 .regulamin-list {
-  counter-reset: list-counter;
-  list-style-type: none;
-  padding-left: 0;
-}
-
-.regulamin-list > li {
-  counter-increment: list-counter;
-  list-style-type: none;
-  position: relative;
-  margin-left: 1em;
+  list-style-type: decimal;
   padding-left: 1.5em;
 }
 
-.regulamin-list > li::before {
-  content: counter(list-counter) ". ";
-  position: absolute;
-  left: 0;
-}
-
-.regulamin-list ol {
-  counter-reset: sub-list-counter;
-  list-style-type: none;
-  margin-left: 1em;
+.regulamin-list > li {
+  list-style-type: decimal;
+  margin-left: 0;
   padding-left: 0;
 }
 
-.regulamin-list ol > li {
-  counter-increment: sub-list-counter;
-  list-style-type: none;
-  position: relative;
+.regulamin-list ol {
+  list-style-type: decimal;
   margin-left: 1.5em;
   padding-left: 1.5em;
 }
 
-.regulamin-list ol > li::before {
-  content: counter(list-counter) "." counter(sub-list-counter) " ";
-  position: absolute;
-  left: 0;
+.regulamin-list ol > li {
+  list-style-type: decimal;
+  margin-left: 0;
+  padding-left: 0;
 }
 
 .regulamin-list ol ol {
-  counter-reset: sub-sub-list-counter;
   margin-left: 1.5em;
 }
 
 .regulamin-list ol ol > li {
-  counter-increment: sub-sub-list-counter;
-  list-style-type: none;
-  position: relative;
-  margin-left: 2em;
-  padding-left: 2.5em;
+  list-style-type: decimal;
+  margin-left: 0;
+  padding-left: 0;
 }
 
-.regulamin-list ol ol > li::before {
-  content: counter(list-counter) "." counter(sub-list-counter) "." counter(sub-sub-list-counter) " ";
-  position: absolute;
-  left: 0;
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+  .regulamin-list > li,
+  .regulamin-list ol > li,
+  .regulamin-list ol ol > li {
+      margin-left: .01em;
+      // padding-left: .25em;
+  }
+  .regulamin-list li {
+    font-size: 10px;
+    margin-bottom: .3em;
+    // margin-left: .01em;
+      // padding-left: .25em;
+  }
 }
