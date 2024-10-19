@@ -6,8 +6,8 @@
                 {!! $siteName !!}
             </a>
      --}}
-      
-            <div class=" ">
+            
+            <div class=" w-auto h-32">
               @if (function_exists('the_custom_logo'))
               {!! the_custom_logo() !!}
           @endif

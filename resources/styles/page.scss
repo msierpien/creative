@@ -1,0 +1,59 @@
+.regulamin-list {
+  counter-reset: list-counter;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.regulamin-list > li {
+  counter-increment: list-counter;
+  list-style-type: none;
+  position: relative;
+  margin-left: 1em;
+  padding-left: 1.5em;
+}
+
+.regulamin-list > li::before {
+  content: counter(list-counter) ". ";
+  position: absolute;
+  left: 0;
+}
+
+.regulamin-list ol {
+  counter-reset: sub-list-counter;
+  list-style-type: none;
+  margin-left: 1em;
+  padding-left: 0;
+}
+
+.regulamin-list ol > li {
+  counter-increment: sub-list-counter;
+  list-style-type: none;
+  position: relative;
+  margin-left: 1.5em;
+  padding-left: 1.5em;
+}
+
+.regulamin-list ol > li::before {
+  content: counter(list-counter) "." counter(sub-list-counter) " ";
+  position: absolute;
+  left: 0;
+}
+
+.regulamin-list ol ol {
+  counter-reset: sub-sub-list-counter;
+  margin-left: 1.5em;
+}
+
+.regulamin-list ol ol > li {
+  counter-increment: sub-sub-list-counter;
+  list-style-type: none;
+  position: relative;
+  margin-left: 2em;
+  padding-left: 2.5em;
+}
+
+.regulamin-list ol ol > li::before {
+  content: counter(list-counter) "." counter(sub-list-counter) "." counter(sub-sub-list-counter) " ";
+  position: absolute;
+  left: 0;
+}
