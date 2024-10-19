@@ -7,7 +7,7 @@
             </a>
      --}}
             
-            <div class=" w-auto h-32">
+            <div class=" w-auto h-[60px]">
               @if (function_exists('the_custom_logo'))
               {!! the_custom_logo() !!}
           @endif

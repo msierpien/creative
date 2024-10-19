@@ -133,6 +133,6 @@ body {
 .custom-logo-link > .custom-logo {
   height: 50px; /* Zmień na pożądaną wysokość */
   overflow: hidden; /* Aby ukryć nadmiarowe części, jeśli jest to konieczne */
-  width: 100%; /* Aby zachować proporcje obrazka */
+  width: auto; /* Aby zachować proporcje obrazka */
 }
 
